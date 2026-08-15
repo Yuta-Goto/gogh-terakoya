@@ -4,50 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>朝活スペース「terakoya」 - gogh</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      color: #333;
-      max-width: 680px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #fafafa;
-    }
-    .card {
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
-    }
-    h1 { font-size: 1.5rem; margin-top: 0; color: #222; }
-    h2 { font-size: 1.2rem; border-bottom: 2px solid #eee; padding-bottom: 6px; }
-    .badge {
-      display: inline-block;
-      background: #eef2ff;
-      color: #4338ca;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: bold;
-    }
-    ul { padding-left: 20px; }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="calendar.js" defer></script>
 </head>
 <body>
 
   <div class="card">
     <span class="badge">gogh 朝活部屋</span>
     <h1>朝活スペース「terakoya」</h1>
+
+    <div class="image-wrapper">
+      <img src="terakoya.png" alt="朝活スペース terakoya の様子" class="hero-image">
+    </div>
+
     <p>毎朝の集中作業や学習のためのスペースです。作業アプリ「Gogh」(Steam版)にて開催中です。</p>
   </div>
 
   <div class="card">
-    <h2>営業・開放スケジュール</h2>
+    <h2>基本営業スケジュール</h2>
     <ul>
       <li><strong>月～土:</strong> 07:00 - 07:30</li>
+      <li><strong>日・祝:</strong> お休み</li>
+      <li>不定休あり</li>
     </ul>
+
+    <!-- カレンダー表示枠 -->
+    <div class="calendar-section">
+      <div class="calendar-header">
+        <h3 id="calendar-title">----年 --月 スケジュール</h3>
+      </div>
+      
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th class="sun">日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th class="sat">土</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- calendar.js により動的に生成されます -->
+        </tbody>
+      </table>
+
+      <div class="calendar-legend">
+        <span class="legend-item"><span class="legend-dot open"></span> 通常営業</span>
+        <span class="legend-item"><span class="legend-dot closed"></span> 休業</span>
+        <span class="legend-item"><span class="legend-dot today"></span> 本日</span>
+      </div>
+    </div>
   </div>
 
   <div class="card">
