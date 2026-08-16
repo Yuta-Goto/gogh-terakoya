@@ -3,7 +3,7 @@
 // ==========================================
 const TARGET_YEAR = 2026;
 const TARGET_MONTH = 8; // 8月
-const CUSTOM_CLOSED_DAYS = [20,29]; // 臨時休業日があれば配列に指定（例: [13, 14, 15]）
+const CUSTOM_CLOSED_DAYS = [19,20,29]; // 臨時休業日があれば配列に指定（例: [13, 14, 15]）
 
 function generateCalendar(year, month) {
   const titleElem = document.getElementById('calendar-title');
